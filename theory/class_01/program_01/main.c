@@ -33,4 +33,6 @@ int main() {
     int n = sizeof(arr) / sizeof(int);
 
     twoSum(arr, n, 6);
+
+    // implement dynamic user input for arr and target
 }
