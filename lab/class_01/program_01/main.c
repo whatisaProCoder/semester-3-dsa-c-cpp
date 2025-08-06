@@ -91,4 +91,6 @@ int main() {
     printNegativeNumbers(arr, n);
     printReversedArray(arr, n);
     summation(arr, n);
+
+    return 0;
 }
