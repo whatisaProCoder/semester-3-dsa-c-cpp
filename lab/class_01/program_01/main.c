@@ -70,6 +70,20 @@ void printReversedArray(int arr[], int n) {
     printf("\n");
 }
 
+void search(int arr[], int n, int key) {
+    int flag = 0;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == key) {
+            printf("Element : %d, found at position : %d\n", arr[i], i + 1);
+            flag = 1;
+            break;
+        }
+    }
+    if (flag == 0) {
+        printf("Element : %d, Not Found\n", key);
+    }
+}
+
 void summation(int arr[], int n) {
     int sum = 0;
     for (int i = 0; i < n; i++) {
@@ -78,19 +92,79 @@ void summation(int arr[], int n) {
     printf("Summation of array elements : %d\n", sum);
 }
 
+void printMaxMin(int arr[], int n) {
+    int min = arr[0];
+    int max = arr[0];
+
+    for (int i = 0; i < n; i++) {
+        if (max < arr[i]) {
+            max = arr[i];
+        }
+        if (min > arr[i]) {
+            min = arr[i];
+        }
+    }
+
+    printf("Smallest Element : %d, Largest Element : %d\n", min, max);
+}
+
 int main() {
     int arr[] = {10, 20, 30, 40, 50};
     int n = sizeof(arr) / sizeof(int);
 
-    printArray(arr, n);
-    printMiddleElement(arr, n);
-    printOddIndices(arr, n);
-    printEvenIndices(arr, n);
-    printMappedElements(arr, n, 2);
-    printIndex(arr, n, 2);
-    printNegativeNumbers(arr, n);
-    printReversedArray(arr, n);
-    summation(arr, n);
+    int choice;
+    printf("Menu:\n");
+    printf("1. Print Array\n");
+    printf("2. Print Middle Element\n");
+    printf("3. Print Odd Indices\n");
+    printf("4. Print Even Indices\n");
+    printf("5. Print Mapped Elements (multFactor = 2)\n");
+    printf("6. Print Element at Position 2\n");
+    printf("7. Print Negative Numbers\n");
+    printf("8. Print Reversed Array\n");
+    printf("9. Search for -20\n");
+    printf("10. Print Max and Min\n");
+    printf("11. Summation\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printArray(arr, n);
+            break;
+        case 2:
+            printMiddleElement(arr, n);
+            break;
+        case 3:
+            printOddIndices(arr, n);
+            break;
+        case 4:
+            printEvenIndices(arr, n);
+            break;
+        case 5:
+            printMappedElements(arr, n, 2);
+            break;
+        case 6:
+            printIndex(arr, n, 2);
+            break;
+        case 7:
+            printNegativeNumbers(arr, n);
+            break;
+        case 8:
+            printReversedArray(arr, n);
+            break;
+        case 9:
+            search(arr, n, -20);
+            break;
+        case 10:
+            printMaxMin(arr, n);
+            break;
+        case 11:
+            summation(arr, n);
+            break;
+        default:
+            printf("Invalid choice.\n");
+    }
 
     return 0;
 }
