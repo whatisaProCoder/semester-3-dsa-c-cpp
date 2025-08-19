@@ -1,16 +1,17 @@
-// Bubble Sort
+// Insertion Sort
 
 #include <stdio.h>
 
-void BubbleSort(int arr[], int n) {
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
+void InsertionSort(int arr[], int n) {
+    int key, j;
+    for (int i = 1; i < n; i++) {
+        key = arr[i];
+        j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
         }
+        arr[j + 1] = key;
     }
 }
 
@@ -37,7 +38,7 @@ int main() {
     int arr[n];
 
     input(arr, n);
-    BubbleSort(arr, n);
+    InsertionSort(arr, n);
     display(arr, n);
 
     return 0;
@@ -47,10 +48,10 @@ int main() {
 Enter number of elements: 5
 Enter the elements:
 1
-6
-5
-8
+7
 3
+5
+4
 The sorted array...
-1 3 5 6 8
+1 3 4 5 7
 */
