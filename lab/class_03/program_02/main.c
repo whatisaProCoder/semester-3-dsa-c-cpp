@@ -1,4 +1,4 @@
-// Quicksort Sort
+// Quicksort Sort (Wrong)
 
 #include <stdio.h>
 
@@ -15,10 +15,10 @@ int partition(int arr[], int l, int h) {
   do {
     do {
       i++;
-    } while (i < h && arr[i] <= pivot);
+    } while (arr[i] <= pivot);
     do {
       j--;
-    } while (j > l && arr[j] > pivot);
+    } while (arr[j] > pivot);
 
     if (i < j) swap(&arr[i], &arr[j]);
   } while (i < j);
