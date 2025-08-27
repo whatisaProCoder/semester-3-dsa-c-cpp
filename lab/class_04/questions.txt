@@ -1,0 +1,12 @@
+// Write a program to take a polynomial as input, store it in array and print
+// it.
+
+// Write a program to take 2 polynomials as input and perform the following
+// operations -
+// 1. addition
+// 2. substraction
+// 3. multiplication
+
+// Take 1 polynomial as input & integrate it.
+
+// Take 1 polynomial as input and differentiate it.
