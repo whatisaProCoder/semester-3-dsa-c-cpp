@@ -1,3 +1,6 @@
+// Write a program to take a polynomial as input, store it in array and print
+// it.
+
 #include <stdio.h>
 
 int main() {
