@@ -72,7 +72,7 @@ void integratePoly(double p[], int d) {
   double res[d + 2];
   for (int i = 0; i <= d + 1; i++) res[i] = 0;
   for (int i = 0; i <= d; i++) {
-    res[i] = p[i] / (d - i + 1);
+    res[i + 1] = p[i] / (d - i + 1);
   }
   printf("Integration: ");
   printPoly(res, d + 1);
