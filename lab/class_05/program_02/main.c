@@ -1,3 +1,5 @@
+// Use pointers and dynamic memory allocation for previous question.
+
 #include <stdio.h>
 #include <stdlib.h>
 
