@@ -65,3 +65,14 @@ int main() {
   } while (ch != 5);
   return 0;
 }
+
+/* OUTPUT
+1.Push 2.Pop 3.Peek 4.View 5.Exit
+1
+5
+1.Push 2.Pop 3.Peek 4.View 5.Exit
+4
+5
+1.Push 2.Pop 3.Peek 4.View 5.Exit
+5
+*/
