@@ -66,3 +66,15 @@ int main() {
   free(stack);
   return 0;
 }
+
+/* OUTPUT
+Enter stack size: 5
+1. Push 2. Pop 3. Peek 4. View 5. Exit
+1
+5
+1. Push 2. Pop 3. Peek 4. View 5. Exit
+4
+5
+1. Push 2. Pop 3. Peek 4. View 5. Exit
+5
+*/
