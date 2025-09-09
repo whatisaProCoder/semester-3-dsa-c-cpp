@@ -57,6 +57,8 @@ int main() {
       case 4:
         view();
         break;
+      case 5:
+        break;
       default:
         printf("Wrong choice!");
     }
