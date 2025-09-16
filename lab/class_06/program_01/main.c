@@ -27,3 +27,8 @@ int main() {
   printf("\n");
   return 0;
 }
+
+/* OUTPUT
+Enter a string: DSA
+Reversed string: ASD
+*/
