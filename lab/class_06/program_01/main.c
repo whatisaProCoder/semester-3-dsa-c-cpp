@@ -11,7 +11,7 @@ int main() {
 
   printf("Enter a string: ");
   fgets(str, MAX, stdin);
-  // Remove newline if present
+  // Remove newline if present    
   str[strcspn(str, "\n")] = '\0';
 
   // Push all characters to stack
