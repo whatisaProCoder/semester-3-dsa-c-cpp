@@ -1,4 +1,4 @@
-// Quicksort Sort (Wrong)
+// Quicksort Sort
 
 #include <stdio.h>
 
@@ -8,31 +8,24 @@ void swap(int *a, int *b) {
   *b = temp;
 }
 
-int partition(int arr[], int l, int h) {
-  int pivot = arr[l];
-  int i = l, j = h;
-
-  do {
-    do {
+int partition(int arr[], int low, int high) {
+  int pivot = arr[high];
+  int i = (low - 1);
+  for (int j = low; j < high; j++) {
+    if (arr[j] < pivot) {
       i++;
-    } while (arr[i] <= pivot);
-    do {
-      j--;
-    } while (arr[j] > pivot);
-
-    if (i < j) swap(&arr[i], &arr[j]);
-  } while (i < j);
-
-  swap(&arr[l], &arr[j]);
-  return j;
+      swap(&arr[i], &arr[j]);
+    }
+  }
+  swap(&arr[i + 1], &arr[high]);
+  return (i + 1);
 }
 
-void QuickSort(int arr[], int l, int h) {
-  int j;
-  if (l < h) {
-    j = partition(arr, l, h);
-    QuickSort(arr, l, j);
-    QuickSort(arr, j + 1, h);
+void QuickSort(int arr[], int low, int high) {
+  if (low < high) {
+    int pi = partition(arr, low, high);
+    QuickSort(arr, low, pi - 1);
+    QuickSort(arr, pi + 1, high);
   }
 }
 
