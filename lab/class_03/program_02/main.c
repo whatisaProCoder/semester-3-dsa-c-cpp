@@ -2,32 +2,34 @@
 
 #include <stdio.h>
 
-void swap(int *a, int *b) {
-  int temp = *a;
-  *a = *b;
-  *b = temp;
+void swap(int arr[], int index1, int index2) {
+  int temp = arr[index1];
+  arr[index1] = arr[index2];
+  arr[index2] = temp;
 }
 
-int partition(int arr[], int low, int high) {
-  int pivot = arr[high];
-  int i = (low - 1);
-  for (int j = low; j < high; j++) {
-    if (arr[j] < pivot) {
-      i++;
-      swap(&arr[i], &arr[j]);
+int pivot(int arr[], int pivotIndex, int endIndex) {
+  int swapIndex = pivotIndex;
+  for (int i = pivotIndex + 1; i < endIndex + 1; i++) {
+    if (arr[i] < arr[pivotIndex]) {
+      swapIndex += 1;
+      swap(arr, i, swapIndex);
     }
   }
-  swap(&arr[i + 1], &arr[high]);
-  return (i + 1);
+  swap(arr, pivotIndex, swapIndex);
+  return swapIndex;
 }
 
-void QuickSort(int arr[], int low, int high) {
-  if (low < high) {
-    int pi = partition(arr, low, high);
-    QuickSort(arr, low, pi - 1);
-    QuickSort(arr, pi + 1, high);
+int* quickSortHelper(int arr[], int left, int right) {
+  if (left < right) {
+    int pivotIndex = pivot(arr, left, right);
+    quickSortHelper(arr, left, pivotIndex - 1);
+    quickSortHelper(arr, pivotIndex + 1, right);
   }
+  return arr;
 }
+
+void QuickSort(int arr[], int n) { quickSortHelper(arr, 0, n - 1); }
 
 void input(int arr[], int n) {
   printf("Enter the elements: \n");
@@ -52,7 +54,7 @@ int main() {
   int arr[n];
 
   input(arr, n);
-  QuickSort(arr, 0, n - 1);
+  QuickSort(arr, n);
   display(arr, n);
 
   return 0;

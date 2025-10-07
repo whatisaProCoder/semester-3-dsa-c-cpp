@@ -3,45 +3,48 @@
 #include <stdio.h>
 
 void SelectionSort(int arr[], int n) {
-    int i, j, k;
-
-    for (i = 0; i < n - 1; i++) {
-        for (j = k = i; j < n; j++) {
-            if (arr[j] < arr[k]) k = j;
-        }
-        int temp = arr[i];
-        arr[i] = arr[k];
-        arr[k] = temp;
+  for (int i = 0; i < n - 1; i++) {
+    int minIndex = i;
+    for (int j = i + 1; j < n; j++) {
+      if (arr[minIndex] > arr[j]) {
+        minIndex = j;
+      }
     }
+    if (i != minIndex) {
+      int temp = arr[minIndex];
+      arr[minIndex] = arr[i];
+      arr[i] = temp;
+    }
+  }
 }
 
 void input(int arr[], int n) {
-    printf("Enter the elements: \n");
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
+  printf("Enter the elements: \n");
+  for (int i = 0; i < n; i++) {
+    scanf("%d", &arr[i]);
+  }
 }
 
 void display(int arr[], int n) {
-    printf("The sorted array...\n");
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
+  printf("The sorted array...\n");
+  for (int i = 0; i < n; i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
 }
 
 int main() {
-    int n;
-    printf("Enter number of elements: ");
-    scanf("%d", &n);
+  int n;
+  printf("Enter number of elements: ");
+  scanf("%d", &n);
 
-    int arr[n];
+  int arr[n];
 
-    input(arr, n);
-    SelectionSort(arr, n);
-    display(arr, n);
+  input(arr, n);
+  SelectionSort(arr, n);
+  display(arr, n);
 
-    return 0;
+  return 0;
 }
 
 /*OUTPUT

@@ -13,8 +13,8 @@ int compare(int a, int b) {
 
 void bubbleSort(int arr[], int n, int (*cmp)(int, int)) {
   int i, j, temp;
-  for (i = 0; i < n - 1; i++) {
-    for (j = 0; j < n - i - 1; j++) {
+  for (i = n; i >= 0; i--) {
+    for (j = 0; j < i; j++) {
       if (cmp(arr[j], arr[j + 1]) == 1) {
         temp = arr[j];
         arr[j] = arr[j + 1];
