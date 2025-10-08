@@ -56,7 +56,7 @@ int binary_search(int a[], int n, int target, int* pos) {
 }
 
 int main() {
-  int a[] = {4, 2, 6, 5, 3, 9, 1, 7};
+  int a[9] = {4, 2, 6, 5, 3, 9, 1, 7};
   int n = 8;
 
   quick_sort(a, n);
